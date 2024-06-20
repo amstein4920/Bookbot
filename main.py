@@ -2,9 +2,9 @@ def main():
     with open("books/frankenstein.txt") as frankensteinText:
         contents = frankensteinText.read()
     print(len(contents.split()))
-    print(characterCount(contents))
+    print(character_count(contents))
 
-def characterCount(string):
+def character_count(string):
     results = {}
     lowerCaseCharacters = string.lower()
     for character in lowerCaseCharacters:
