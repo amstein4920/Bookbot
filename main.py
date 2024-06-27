@@ -5,7 +5,7 @@ def main():
         contents = frankensteinText.read()
     # print(len(contents.split()))
     # print(character_count(contents))
-    get_title(contents)
+    print(get_title(contents))
 
 def character_count(string):
     results = {}
@@ -17,9 +17,9 @@ def character_count(string):
             results[character] = 1
     return results
 
-def get_title(text):
-    searchResult = re.search("^\nTitle((?:\n|.)*?)\n$", text)
-    print(searchResult)
+def get_title(txt):
+    searchResult = compiled_regex = re.compile(r'Title: (.*?)Author', re.DOTALL)
+    return searchResult.findall(txt)[0]
 
 def print_report(text):
     title = get_title(text)
